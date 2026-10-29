@@ -3,25 +3,25 @@ package fiap.com.br.job_matching_inclusivo.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "java_vaga")
+@Table(name = "JAVA_VAGA")
 public class Vaga {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 100)
+    @Column(nullable = false, length = 50)
     private String titulo;
 
     @Column(nullable = false, length = 50)
-    private String empresa;
+    private String habilidade;
 
     public Vaga() {
     }
 
-    public Vaga(String titulo, String empresa) {
+    public Vaga(String titulo, String habilidade) {
         this.titulo = titulo;
-        this.empresa = empresa;
+        this.habilidade = habilidade;
     }
 
     public Long getId() {
@@ -36,11 +36,11 @@ public class Vaga {
         this.titulo = titulo;
     }
 
-    public String getEmpresa() {
-        return empresa;
+    public String getHabilidade() {
+        return habilidade;
     }
 
-    public void setEmpresa(String empresa) {
-        this.empresa = empresa;
+    public void setHabilidade(String habilidade) {
+        this.habilidade = habilidade;
     }
 }

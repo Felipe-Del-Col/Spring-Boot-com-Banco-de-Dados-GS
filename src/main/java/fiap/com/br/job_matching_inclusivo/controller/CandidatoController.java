@@ -5,6 +5,8 @@ import fiap.com.br.job_matching_inclusivo.service.CandidatoService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/candidato")
 public class CandidatoController {
@@ -21,4 +23,10 @@ public class CandidatoController {
 
         return ResponseEntity.ok(novoCandidato);
     }
+
+    @GetMapping("/{candidatoId}/titulo")
+    public ResponseEntity<List<String>> buscarTitulos(@PathVariable Long candidatoId) {
+        return ResponseEntity.ok(candidatoService.buscarTitulos(candidatoId));
+    }
+
 }
